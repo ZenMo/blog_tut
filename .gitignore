@@ -2,3 +2,4 @@ Include/
 lib/
 scripts/
 *.pyc
+db.sqlite3
