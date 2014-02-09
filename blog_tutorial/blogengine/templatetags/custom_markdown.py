@@ -12,7 +12,7 @@ register = template.Library()
 def custom_markdown(value):
 	extensions = ["nl2br", ]
 	
-	return mark_safe(markdown.markdown(force_unicode(vaue),
+	return mark_safe(markdown.markdown(force_unicode(value),
 																	extensions,
 																	safe_mode=True,
 																	enable_attributes=False))
