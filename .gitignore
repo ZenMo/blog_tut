@@ -4,4 +4,4 @@ scripts/
 *.pyc
 db.sqlite3
 .project
-blogengine/static/bower_components/
+blog_tutorial/blogengine/static/bower_components/
