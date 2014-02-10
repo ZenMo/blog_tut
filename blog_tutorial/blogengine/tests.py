@@ -12,6 +12,7 @@ class PostTest(TestCase):
 		# Set the attributes
 		post.title = "My first post"
 		post.text = "This is my first blog post"
+		post.slug = 'my-first-post'
 		post.pub_date = timezone.now()
 		
 		# Save it
@@ -26,6 +27,7 @@ class PostTest(TestCase):
 		# Check attributes
 		self.assertEquals(only_post.title, 'My first post')
 		self.assertEquals(only_post.text, 'This is my first blog post')
+		self.assertEquals(only_post.slug, 'my-first-post')
 		self.assertEquals(only_post.pub_date.day, post.pub_date.day)
 		self.assertEquals(only_post.pub_date.month, post.pub_date.month)
 		self.assertEquals(only_post.pub_date.year, post.pub_date.year)
@@ -90,7 +92,8 @@ class AdminTest(LiveServerTestCase):
 			'title': 'My first post',
 			'text': 'This is my first post',
 			'pub_date_0': '2014-2-6',
-			'pub_date_1': '10:06:00'
+			'pub_date_1': '10:06:00',
+			'slug': 'my-first-post'
 		},
 		follow=True
 		)
@@ -108,6 +111,7 @@ class AdminTest(LiveServerTestCase):
 		post = Post()
 		post.title = 'My first post'
 		post.text = 'This is my first blog post'
+		post.slug = 'my-first-post'
 		post.pub_date = timezone.now()
 		post.save()
 		
@@ -119,7 +123,8 @@ class AdminTest(LiveServerTestCase):
 			'title': 'My second post',
 			'text': 'This is my second blog post',
 			'pub_date_0': '2014-2-6',
-			'pub_date_1': '22:00:04'
+			'pub_date_1': '22:00:04',
+			'slug': 'my-second-post'
 		},
 		follow=True
 		)
@@ -140,6 +145,7 @@ class AdminTest(LiveServerTestCase):
 		post = Post()
 		post.title = 'My first post'
 		post.text = 'This is my first blog post'
+		post.slug = 'my-first-post'
 		post.pub_date = timezone.now()
 		post.save()
 
@@ -172,6 +178,7 @@ class PostViewTest(LiveServerTestCase):
 		post = Post()
 		post.title = 'My first post'
 		post.text = 'This is [my first blog post](http://127.0.0.1:8000/)'
+		post.slug = 'my-first-post'
 		post.pub_date = timezone.now()
 		post.save()
 		
@@ -202,6 +209,7 @@ class PostViewTest(LiveServerTestCase):
 		post = Post()
 		post.title = 'My first post'
 		post.text = 'This is [my first blog post](http://127.0.0.1:8000/)'
+		post.slug = 'my-first-post'
 		post.pub_date = timezone.now()
 		post.save()
 			
