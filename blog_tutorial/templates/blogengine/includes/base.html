@@ -9,7 +9,21 @@
         <title></title>{% block title %}My Django Blog{% endblock %}
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+		
+		<div class="navbar navbar-static-top navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="/">My Django Blog</a>
+					<div class="nav-collapse collapse">
+					</div>
+				</div>
+			</div>
+		</div>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 		
 		{% load staticfiles %}
@@ -41,5 +55,12 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
+		<div class="container footer">
+			<div class="row">
+				<div class="span12">
+					<p>Copyright &copy; {% now "Y" %}
+				</div>
+			</div>
+		</div>
     </body>
 </html>
