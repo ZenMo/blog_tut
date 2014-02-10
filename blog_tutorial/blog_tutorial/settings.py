@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 	'south',
 	'blogengine',
+	'django.contrib.sites',
+	'django.contrib.flatpages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -53,6 +55,7 @@ ROOT_URLCONF = 'blog_tutorial.urls'
 
 WSGI_APPLICATION = 'blog_tutorial.wsgi.application'
 
+SITE_ID = 1
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
